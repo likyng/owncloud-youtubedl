@@ -134,7 +134,7 @@ class PageController extends Controller
                          * Deleting downloaded file, because we converted it to mp3 (or couldnt convert)
                          * TODO: Remove file downloaded youtube file with OwnCloud API
                          * */
-                        $command = 'rm -rf ' . $fileLocation;
+                        $command = 'rm -f ' . $fileLocation;
                         $process = new \Symfony\Component\Process\Process($command);
                         $process->setTimeout(3600);
                         $process->run();
