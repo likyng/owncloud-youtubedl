@@ -115,7 +115,7 @@ class PageController extends Controller
 						* You have to escape them
 						*/
 						$fileLocation = str_replace(" ","\ ",$fileLocation);
-                        $command = 'avconv -i ' . $fileLocation . ' -vn -y ' . $fileLocation . '.mp3';
+                        $command = 'ffmpeg -i ' . $fileLocation . ' -vn -q:a 0 -y ' . $fileLocation . '.mp3';
                         $process = new \Symfony\Component\Process\Process($command);
                         $process->setTimeout(3600);
                         $process->run();
